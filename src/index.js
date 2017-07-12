@@ -5,12 +5,19 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchBar from './components/search_bar';
 
-// <- JSX, not HTML. Babbel and webpack transpile it to vanilla JavaScript
-//JSX cannot be interpreted by the browser
+const API_KEY = 'AIzaSyDCSN075ONuXRZVa_3mkbIj0oPDHqW5gLk';
+
+// JSX, not HTML. Babbel and webpack transpile it to vanilla JavaScript
+// JSX cannot be interpreted by the browser
 
 const App = () => {
-  return <div>Hi!</div>;
+  return (
+    <div>
+      <SearchBar/>
+    </div>
+  );
 };
 
 // Take this component's generated HTML and put it on
