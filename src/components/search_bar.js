@@ -14,7 +14,10 @@ class SearchBar extends Component {
   }
 
   render() {
-    return <input onChange={(event) => console.log(event.target.value)} />; // call function without brackets
+    return <input onChange={(event) => {
+      this.setState({searchTerm: event.target.value});
+      console.log(this.state);
+    }} />; // call function without brackets
   };
 
 }
