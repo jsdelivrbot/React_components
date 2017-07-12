@@ -1,8 +1,10 @@
 "use strict";
-import React from 'react';
+import React,  { Component } from 'react'; // import React and pull off the property Component as variable Component
 
-const SearchBar = () => {
-  return <input />; //React.createElement();
-};
+class SearchBar extends React {
+  render() {
+    return <input />;
+  }
+}
 
 export default SearchBar;
