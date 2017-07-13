@@ -2,6 +2,7 @@ import React from 'react';
 
 const VideoDetail = ({video}) => {
 
+  // Handling null props
   if(!video) {
     return <div>Loading...</div>;
   }

@@ -5,7 +5,12 @@ const VideoList = (props) => {
 
   const VideoItems = props.videos.map((video) => {
     // add unique key to be able to update each record by its key
-    return <VideoListItem key={video.etag} video={video}/>
+    return (
+      <VideoListItem
+        videoSelect={props.videoSelect}
+        key={video.etag}
+        video={video} />
+    );
   });
 
   return (
