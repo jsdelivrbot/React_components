@@ -6,8 +6,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
+import YTSearch from 'youtube-api-search';
 
 const API_KEY = 'AIzaSyDCSN075ONuXRZVa_3mkbIj0oPDHqW5gLk';
+
+YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
+  console.log(data);
+});
 
 // JSX, not HTML. Babbel and webpack transpile it to vanilla JavaScript
 // JSX cannot be interpreted by the browser
