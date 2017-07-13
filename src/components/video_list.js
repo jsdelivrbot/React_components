@@ -4,7 +4,8 @@ import VideoListItem from './video_list_item';
 const VideoList = (props) => {
 
   const VideoItems = props.videos.map((video) => {
-    return <VideoListItem video={video}/>
+    // add unique key to be able to update each record by its key
+    return <VideoListItem key={video.etag} video={video}/>
   });
 
   return (
