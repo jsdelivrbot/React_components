@@ -2,7 +2,7 @@
 // Some HTML
 // Always one component per file
 "use strict";
-
+import _ from 'lodash';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
@@ -21,8 +21,12 @@ class App extends Component {
       selectedVideo: null
     };
 
+    this.videoSearch('surboards');
+  }
+
+  videoSearch(term) {
     // this.setState({videos: videos})
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+    YTSearch({key: API_KEY, term}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -33,9 +37,11 @@ class App extends Component {
   render() {
     // passing props to video_list component, ensuring communication between parent and child components
 
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+
     return (
       <div>
-        <SearchBar/>
+        <SearchBar onSearchTermChange={videoSearch}/>
         <VideoDetail video={ this.state.selectedVideo }/>
         <VideoList
           videoSelect={ (selectedVideo) => this.setState({selectedVideo})}
