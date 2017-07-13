@@ -15,14 +15,13 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <input
           value={this.state.searchTerm}   // Turns input into a controlled component
           onChange={(event) => {          // This.setState causes the component to rerender and after that,
                                           // the value of the input gets updated
           this.setState({searchTerm: event.target.value}); // the value of the input has not changed ATM
           }} />
-        Value of the input: {this.state.searchTerm}
       </div>
     );
   };

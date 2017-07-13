@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   render() {
-    // passing props to video_list component
+    // passing props to video_list component, ensuring communication between parent and child components
 
     return (
       <div>
