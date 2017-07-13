@@ -3,7 +3,7 @@
 // Always one component per file
 "use strict";
 
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
@@ -17,13 +17,21 @@ YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
 // JSX, not HTML. Babbel and webpack transpile it to vanilla JavaScript
 // JSX cannot be interpreted by the browser
 
-const App = () => {
-  return (
-    <div>
-      <SearchBar/>
-    </div>
-  );
-};
+/*
+ Refactor the functional component(App) to a class base component to keep track of the list of videos by
+ recording them on its state
+
+ */
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <SearchBar/>
+      </div>
+    )
+  }
+}
 
 // Take this component's generated HTML and put it on
 // The page (in the Document Object Model)
